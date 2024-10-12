@@ -8,3 +8,5 @@ export const Sky = {
     night: '#191970',        // Dark navy blue for night
     snowy: '#F0FFFF',        // Very light blue/white for snowy weather
 };
+
+const uselessThing = 25252;
