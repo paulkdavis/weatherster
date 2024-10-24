@@ -71,3 +71,5 @@ coverage/
 
 # Pnpm store directory
 .pnpm-store/
+.vercel
+.env*.local

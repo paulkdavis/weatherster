@@ -41,4 +41,68 @@
   background-color: red;
   width: 100vw;
   height: 100vh;
-} 
+}
+
+#weather-overview-container{
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+#location{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+  #location > input {
+    font-family: monospace;
+    font-size: 2em;
+    font-weight: bold;
+    border: none;
+    background: none;
+    text-align: center;
+    color: inherit;
+    padding: 0.67em 0;
+    margin: 0;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  #location > input:focus {
+    outline: none;
+    border-bottom: 2px solid currentColor;
+  }
+
+  #location:hover{
+    color: lightgray
+  }
+
+#weather-scene-container{
+  background-color: blue;
+  width: 100vw;
+  height: 100%;
+}
+
+#temperature-widget-container{
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+}
+
+#temperature-text{
+  font-family: monospace;
+  font-size: 3rem;
+}
+
+#wind-widget-container{
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+}
+
+#wind-text{
+  font-family: monospace;
+  font-size: 3rem;
+}
