@@ -12,7 +12,7 @@ interface wind{
     return (
       <div id='wind-widget-container'>
           <span id='wind-text'>
-          {Math.round(wind?.speed == undefined ? 0 : wind?.speed)}km/h
+          {Math.round(wind?.speed == undefined ? 0 : wind?.speed*3.6)}km/h
           </span>
       </div>
     );
