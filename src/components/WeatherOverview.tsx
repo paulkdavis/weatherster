@@ -11,6 +11,7 @@ import Sun from './3D/Sun';
 import Cloud from './3D/Cloud';
 import TemperatureWidget from './Widgets/TemperatureWidget';
 import WindWidget from './Widgets/WindWidget';
+import Thunderstorm from './3D/Thunderstorm';
 
 interface WeatherOverviewProps {
   location: string;
@@ -107,7 +108,7 @@ function WeatherOverview({ location, weather, onLocationChange }: WeatherOvervie
       case Weather.sunny:
         return <Sun />;
       case Weather.thunderstorm:
-        return 'THUNDERSTORM';
+        return <Thunderstorm />;
       default:
         return <Cloud />
     }
