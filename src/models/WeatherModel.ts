@@ -40,7 +40,7 @@ class WeatherModel{
 
         this.humidity = main.humidity;
         this.pressure = main.pressure;
-        this.temperature = main.temp;
+        this.temperature = main.temp | 0;
         this.minTemperature = main.temp_min;
         this.maxTemperature = main.temp_max;
 

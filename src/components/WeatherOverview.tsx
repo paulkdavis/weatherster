@@ -108,6 +108,7 @@ function WeatherOverview({ location, weather, onLocationChange }: WeatherOvervie
       case Weather.sunny:
         return <Sun />;
       case Weather.thunderstorm:
+        //TODO THUNDERSTORM NEEDS WORK...
         return <Thunderstorm />;
       default:
         return <Cloud />
@@ -129,8 +130,13 @@ function WeatherOverview({ location, weather, onLocationChange }: WeatherOvervie
       <div id='weather-scene-container' style={{backgroundColor: skyColor}}>
         {determineWeatherAnimation()}
       </div>
-      <WindWidget wind={weather?.getCurrentWind()} /> 
-      <TemperatureWidget temperature={weather?.getCurrentTemperature()} />
+      <WindWidget wind={weather ? weather.getCurrentWind() : 
+      {
+        deg: 0,
+        speed: 0
+      }
+      } /> 
+      <TemperatureWidget temperature={weather ? weather.getCurrentTemperature() : 0} />
     </div>
   );
 }
