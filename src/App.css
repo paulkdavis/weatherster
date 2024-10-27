@@ -48,6 +48,11 @@
   grid-template-rows: auto 1fr;
 }
 
+#weather-details-container{
+  font-family: monospace;
+  padding-top: 25px
+}
+
 #location{
   display: flex;
   justify-content: center;
@@ -102,7 +107,6 @@
   bottom: 25px;
 }
 
-#wind-text{
+#wind-vane{
   font-family: monospace;
-  font-size: 3rem;
 }

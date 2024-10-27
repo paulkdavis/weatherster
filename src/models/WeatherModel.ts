@@ -82,8 +82,36 @@ class WeatherModel{
         return Math.round(this.temperature);
     }
 
+    public getMinTemperature(): number {
+        return this.minTemperature;
+    }
+
+    public getMaxTemperature(): number {
+        return this.maxTemperature;
+    }
+
     public getCurrentWind(): wind {
         return this.wind;
+    }
+
+    public getSunrise(): number {
+        return this.sunrise;
+    }
+
+    public getSunset(): number {
+        return this.sunset;
+    }
+    
+    public getHumidity(): number {
+        return this.humidity;
+    }
+
+    public getPressure(): number {
+        return this.pressure;
+    }
+
+    public getVisibility(): number {
+        return this.visibility;
     }
 
 }

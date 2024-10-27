@@ -6,6 +6,7 @@ import WeatherModel from './models/WeatherModel';
 import LocationModel from './models/LocationModel';
 import WeatherService from './services/WeatherService';
 import LocationService from './services/LocationService';
+import WeatherDetails from './components/WeatherDetails';
 
 function App() {
   // Environment variable checks
@@ -110,6 +111,9 @@ function App() {
         location={location?.toString() || ''}
         weather={weatherModel}
         onLocationChange={handleLocationChange}
+      />
+      <WeatherDetails 
+        weather={weatherModel}
       />
     </div>
   );

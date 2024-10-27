@@ -1,5 +1,7 @@
 import {useState} from 'react';
 
+import WindVane from './WindVane';
+
 interface WindWidgetProps {
     wind: wind
   }
@@ -22,10 +24,16 @@ interface wind{
 
     return (
       <div id='wind-widget-container'>
-          <span id='wind-text'>
+          <WindVane currWind=
+            {
+              {deg: wind.deg,
+              speed: windInKMH}
+            }
+           />
+          {/*<span id='wind-text'>
             {isMetric ? Math.round(windInKMH) : Math.round(windInKMH*KM_TO_MILES_RATIO) }
             <span style={{cursor: 'pointer'}} onClick={() => {isMetric ? setIsMetric(false) : setIsMetric(true)}}>{isMetric ? 'km/h' : 'mph'}</span>
-          </span>
+          </span>*/}
       </div>
     );
   }

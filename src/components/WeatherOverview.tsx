@@ -12,6 +12,7 @@ import Cloud from './3D/Cloud';
 import TemperatureWidget from './Widgets/TemperatureWidget';
 import WindWidget from './Widgets/WindWidget';
 import Thunderstorm from './3D/Thunderstorm';
+import SkyService from '../services/SkyService';
 
 interface WeatherOverviewProps {
   location: string;
@@ -59,35 +60,8 @@ function WeatherOverview({ location, weather, onLocationChange }: WeatherOvervie
 
   //Set sky color
   useEffect(() => {
-    const primaryWeather = weather?.getPrimaryWeather();
-    switch(primaryWeather) {
-      case Weather.cloudy:
-        setSkyColor(Sky.cloudy);
-        break;
-      case Weather.foggy:
-        setSkyColor(Sky.foggy);
-        break;
-      case Weather.night:
-        setSkyColor(Sky.night);
-        break;
-      case Weather.partlyCloudy:
-        setSkyColor(Sky.partlyCloudy);
-        break;
-      case Weather.rainy:
-        setSkyColor(Sky.rainy);
-        break;
-      case Weather.snowy:
-        setSkyColor(Sky.snowy);
-        break;
-      case Weather.sunny:
-        setSkyColor(Sky.sunny);
-        break;
-      case Weather.thunderstorm:
-        setSkyColor(Sky.thunderstorm);
-        break;
-      default:
-        return;
-    }
+    const primaryWeather = weather == null ? Weather.cloudy : weather.getPrimaryWeather();
+    setSkyColor(SkyService.getSkyColor(primaryWeather));
   }, [weather]);
 
   const determineWeatherAnimation = () => {
